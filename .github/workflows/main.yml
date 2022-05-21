@@ -1,8 +1,9 @@
 name: Test-Build
 on:
   push:
-    branches:
-      - master
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 jobs:
   test-api:
     runs-on: ubuntu-latest
@@ -14,7 +15,7 @@ jobs:
     - name: Install Node
       uses: actions/setup-node@v1
       with: 
-        node-version: '12.x'
+        node-version: '16.x'
     
     # Install the newman command line utility and also install the html extra reporter
     - name: Install newman
@@ -30,11 +31,11 @@ jobs:
     # Run the POSTMAN collection
     - name: Run POSTMAN collection
       run: |
-       newman run ReporterSlack.postman_collection.json
+       newman run ReporterSlack.postman_collection.json -r htmlextra --reporter-htmlextra-export testResults/htmlreport.html --reporter-htmlextra-darkTheme  > testResults/runreport1.html
+
     # Upload the contents of Test Results directory to workspace
     - name: Output the run Details
       uses: actions/upload-artifact@v2
       with: 
        name: RunReports
        path: testResults
-     
