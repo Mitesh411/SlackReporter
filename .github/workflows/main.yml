@@ -31,7 +31,7 @@ jobs:
    
     # Add Permission to sh File
     - name: Adding Permission
-      run: chmod +x ./Newman-to-Slack.sh
+      run: chmod 744 Newman-to-Slack.sh
       
     # Run the POSTMAN collection
     - name: Run POSTMAN collection
