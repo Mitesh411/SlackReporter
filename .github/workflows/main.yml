@@ -31,7 +31,7 @@ jobs:
 
     # Run the POSTMAN collection
     - name: Run POSTMAN collection
-      run: newman run "ReporterSlack.postman_collection.json" --suppress-exit-code -r slackmsg --reporter-slackmsg-webhookurl 'https://hooks.slack.com/services/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'
+      run: newman run "ReporterSlack.postman_collection.json" --suppress-exit-code -r slackmsg --reporter-slackmsg-webhookurl https://hooks.slack.com/services/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
    
    # Upload the contents of Test Results directory to workspace
     - name: Output the run Details
