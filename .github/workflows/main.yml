@@ -35,7 +35,7 @@ jobs:
       
     # Run the POSTMAN collection
     - name: Run POSTMAN collection
-      run: ./Newman-to-Slack.sh -c "ReporterSlack.postman_collection.json" -w https://hooks.slack.com/services/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 
+      run: ./Newman-to-Slack.sh -c "ReporterSlack.postman_collection.json" -w 
       
    # Upload the contents of Test Results directory to workspace
     - name: Output the run Details
