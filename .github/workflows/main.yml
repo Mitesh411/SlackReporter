@@ -31,8 +31,7 @@ jobs:
 
     # Run the POSTMAN collection
     - name: Run POSTMAN collection
-      run: newman run "ReporterSlack.postman_collection.json" --suppress-exit-code -r slackmsg --reporter-slackmsg-webhookurl https://hooks.slack.com/services/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
-
+      run: newman run "ReporterSlack.postman_collection.json" --suppress-exit-code -r slackmsg --reporter-slackmsg-webhookurl 'curl -X POST -H 'Content-type: application/json' --data '{"text":"Hello, World!"}' https://hooks.slack.com/services/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'
     # Upload the contents of Test Results directory to workspace
     - name: Output the run Details
       uses: actions/upload-artifact@v2
