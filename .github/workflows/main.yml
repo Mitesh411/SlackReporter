@@ -74,7 +74,7 @@ jobs:
       
     # Run the POSTMAN collection
     - name: Run POSTMAN collection
-      run: newman run "ReporterSlack.postman_collection.json" -r htmlextra --reporter-htmlextra-export testResultsOne/htmlreport.html
+      run: ./Newman-to-Slack.sh -c mycollection.json.postman_collection -w SECRET_SAUCE
 
 
    # Upload the contents of Test Results directory to workspace
