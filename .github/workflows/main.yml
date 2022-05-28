@@ -74,7 +74,7 @@ jobs:
       
     # Run the POSTMAN collection
     - name: Run POSTMAN collection
-      run: ./Newman-to-Slack.sh -c mycollection.json.postman_collection -w SECRET_SAUCE
+      run: ./Newman-to-Slack.sh -c mycollection.json.postman_collection -w https://hooks.slack.com/services/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
 
 
    # Upload the contents of Test Results directory to workspace
