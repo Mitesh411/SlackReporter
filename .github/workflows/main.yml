@@ -37,7 +37,12 @@ jobs:
     - name: Run POSTMAN collection
       run: newman run "ReporterSlack.postman_collection.json" -r htmlextra --reporter-htmlextra-export testResults/htmlreport.html
 
-
+     # Upload the contents of Test Results directory to workspace
+    - name: Output the run Details
+      uses: actions/upload-artifact@v2
+      with: 
+       name: RunReports
+       path: testResults     
   
   Amazon-Test:
     runs-on: ubuntu-latest
@@ -60,7 +65,7 @@ jobs:
 
     # Make directory to upload the test results
     - name: Make Directory for results
-      run: mkdir -p testResults
+      run: mkdir -p testResultsOne
    
    
     # Add Permission to sh File
@@ -78,11 +83,3 @@ jobs:
       with: 
        name: RunReports
        path: testResultsOne
-       
-       
-   # Upload the contents of Test Results directory to workspace
-    - name: Output the run Details
-      uses: actions/upload-artifact@v2
-      with: 
-       name: RunReports
-       path: testResults    
