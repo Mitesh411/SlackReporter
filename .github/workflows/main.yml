@@ -59,7 +59,9 @@ jobs:
     # Install the newman command line utility and also install the html extra reporter
     - name: Install newman
       run: |
+       npm update -g newman
        npm install -g newman
+       npm show newman version
        npm install -g newman-reporter-htmlextra
        npm i -g newman-reporter-slackmsg
 
