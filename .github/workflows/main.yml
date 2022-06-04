@@ -74,7 +74,7 @@ jobs:
       
     # Run the POSTMAN collection
     - name: Run POSTMAN collection
-      run: newman run "ReporterSlack.postman_collection.json" --suppress-exit-code -r slackmsg --reporter-slackmsg-webhookurl '${{ secrets.SECRET_SAUCE }}'
+      run: ./Newman-to-Slack.sh -c mycollection.json.postman_collection -w '${{ secrets.SECRET_SAUCE }}'
 
    # Upload the contents of Test Results directory to workspace
     - name: Output the run Details
