@@ -76,7 +76,7 @@ jobs:
       
     # Run the POSTMAN collection
     - name: Run POSTMAN collection
-      run: Newman-to-Slack.sh -c mycollection.json.postman_collection -w '${{ secrets.SECRET_SAUCE }}' --color off  --disable-unicode
+      run: ./Newman-to-Slack.sh -c mycollection.json.postman_collection -w '${{ secrets.SECRET_SAUCE }}' --color off  --disable-unicode
 
    # Upload the contents of Test Results directory to workspace
     - name: Output the run Details
